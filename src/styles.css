@@ -1,0 +1,147 @@
+/* Base styles */
+:root {
+  --primary-color: #ffffff; /* White for primary elements */
+  --primary-dark: #e5e5e5; /* Light gray for hover states */
+  --secondary-color: #0f0f0f; /* Near black for secondary backgrounds */
+  --accent-color: #ffffff; /* White for accents */
+  --text-color: #ffffff; /* White for main text */
+  --text-light: #a3a3a3; /* Light gray for secondary text */
+  --surface-color: #1a1a1a; /* Dark gray for card backgrounds */
+  --dark-bg: #000000; /* Pure black for backgrounds */
+  --success-color: #ffffff; /* White for success indicators */
+  --warning-color: #ffffff; /* White for warnings */
+  --error-color: #ffffff; /* White for errors */
+  --padding-section: 100px 0; /* Increased padding for better spacing */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--dark-bg);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+section {
+  padding: var(--padding-section);
+}
+
+.section-title {
+  margin-bottom: 2.5rem;
+  font-size: 1.75rem;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animation utilities */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
