@@ -40,8 +40,7 @@ const Experience = () => {
             MY<br />RUNNING PROJECT
           </h2>
           <p className="text-textLight text-sm mb-2 uppercase tracking-widest max-w-xl">
-            As a front end developer using modern ideas simplicity design and universal visual identification tailored to dedicated and current market.
-          </p>
+          Delivering modern front-end development with clean, simple designs and consistent visual elements that connect well with today's target market.          </p>
         </div>
         
           {experiences.map((exp) => (

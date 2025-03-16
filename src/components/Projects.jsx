@@ -1,22 +1,30 @@
 import React from 'react';
 import menararTirzaImage from '../assets/images/menaratirza.png';
 import metrodataAcademyImage from '../assets/images/metrodata-academy.png';
+import siloamImage from '../assets/images/siloam.png';
 
 const Projects = () => {
   const categories = [
     { 
       id: 'web-design', 
-      title: 'WEB DESIGN', 
+      title: 'KOPERASI MENARA TIRZA', 
       count: '01', 
       description: 'Creating engaging digital experiences',
       image: menararTirzaImage
     },
     { 
       id: 'web-development', 
-      title: 'WEB DEVELOPMENT', 
+      title: 'METRODATA ACADEMY', 
       count: '02', 
       description: 'Building functional, dynamic websites',
       image: metrodataAcademyImage
+    },
+    { 
+      id: 'siloam', 
+      title: 'Siloam International Hospital', 
+      count: '03', 
+      description: 'Building mobile solutions that turn complex problems into simple interactions',
+      image: siloamImage
     }
   ];
   
@@ -72,7 +80,7 @@ const Projects = () => {
         
         {/* Projects */}
         {categories.map((category, index) => (
-          <div key={category.id} className="border-t border-gray-800 pb-16">
+          <div key={category.id} className="border-t border-gray-800 ">
             <div className="py-12 grid grid-cols-12 gap-8">
               {/* Left Column: Title */}
               <div className="col-span-5 md:col-span-4">
@@ -93,7 +101,7 @@ const Projects = () => {
                   <img 
                     src={category.image}
                     alt={category.title} 
-                    className="w-4/5 h-auto"
+                    className="w-3/5 h-auto"
                   />
                 </div>
               </div>
