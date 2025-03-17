@@ -1,30 +1,91 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FeaturedProjectModal from './FeaturedProjectModal';
 import menararTirzaImage from '../assets/images/menaratirza.png';
 import metrodataAcademyImage from '../assets/images/metrodata-academy.png';
 import siloamImage from '../assets/images/siloam.png';
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+  
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+  
   const categories = [
     { 
       id: 'web-design', 
       title: 'KOPERASI MENARA TIRZA', 
       count: '01', 
       description: 'Creating engaging digital experiences',
-      image: menararTirzaImage
+      image: menararTirzaImage,
+      type: 'Web Application',
+      client: 'Menara Tirza Christian School',
+      timeline: 'August 2024 - December 2024',
+      overview: 'A comprehensive web platform for managing cooperative operations at Menara Tirza Christian School. The system handles member management, savings and loans tracking, financial reporting, and dividend calculations.',
+      challenge: 'The school needed a modern solution to replace their manual cooperative management system. They required a secure platform that could handle multiple user roles, track financial transactions accurately, and generate comprehensive reports.',
+      solution: 'Developed a custom web application with role-based access control, real-time transaction tracking, automated interest calculations, and detailed financial reporting capabilities.',
+      technologies: ['React.js', 'Node.js', 'Express', 'MySQL', 'Redux', 'Tailwind CSS'],
+      features: [
+        'Member management and authentication',
+        'Savings accounts with multiple types',
+        'Loan application and approval workflow',
+        'Automated interest calculations',
+        'Financial reporting and dashboards',
+        'Admin control panel'
+      ],
+      website: '#'
     },
     { 
       id: 'web-development', 
       title: 'METRODATA ACADEMY', 
       count: '02', 
       description: 'Building functional, dynamic websites',
-      image: metrodataAcademyImage
+      image: metrodataAcademyImage,
+      type: 'E-Learning Platform',
+      client: 'Metrodata Group',
+      timeline: 'August 2024 - December 2024',
+      overview: 'A comprehensive e-learning platform for Metrodata Academy providing interactive courses, assessment tools, and progress tracking for technical training programs.',
+      challenge: 'Metrodata Academy needed a scalable learning platform that could deliver technical training content, handle interactive exercises, provide progress tracking, and integrate with their existing HR systems.',
+      solution: 'Created a custom e-learning platform with course management, interactive coding exercises, real-time assessment, and comprehensive analytics for both students and administrators.',
+      technologies: ['React.js', 'Next.js', 'Node.js', 'MongoDB', 'GraphQL', 'Material UI'],
+      features: [
+        'Course catalog with filtering and search',
+        'Interactive learning modules with embedded exercises',
+        'Live coding environment for practical assignments',
+        'Progress tracking and certifications',
+        'Admin dashboard for content management',
+        'Integration with HR systems'
+      ],
+      website: '#'
     },
     { 
       id: 'siloam', 
       title: 'Siloam International Hospital', 
       count: '03', 
       description: 'Building mobile solutions that turn complex problems into simple interactions',
-      image: siloamImage
+      image: siloamImage,
+      type: 'Healthcare Application',
+      client: 'Siloam International Hospital',
+      timeline: 'January 2024 - June 2024',
+      overview: 'A patient management and appointment booking system for Siloam International Hospital, providing streamlined healthcare services through a user-friendly digital interface.',
+      challenge: 'Siloam Hospital needed to modernize their patient management system to reduce wait times, improve appointment scheduling, and provide better access to medical records while ensuring security and compliance with healthcare regulations.',
+      solution: 'Developed a comprehensive healthcare application with secure patient portals, efficient appointment scheduling, electronic medical records access, and integration with existing hospital systems.',
+      technologies: ['React Native', 'Firebase', 'Node.js', 'Express', 'MongoDB', 'Redux'],
+      features: [
+        'Secure patient portal with medical history',
+        'Real-time appointment booking and management',
+        'Doctor availability calendar',
+        'Prescription management',
+        'Lab results and medical records access',
+        'Push notifications for appointments'
+      ],
+      website: '#'
     }
   ];
   
@@ -108,12 +169,12 @@ const Projects = () => {
               
               {/* Right Column: View Projects */}
               <div className="col-span-2 flex justify-end items-start">
-                <a 
-                  href={`#${category.id}`} 
-                  className="inline-flex items-center text-textLight hover:text-white transition-colors"
+                <button 
+                  onClick={() => openModal(category)} 
+                  className="inline-flex items-center text-textLight hover:text-white transition-colors bg-transparent p-0"
                 >
                   View projects <span className="ml-2">→</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -157,6 +218,13 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      
+      {/* Featured Project Modal */}
+      <FeaturedProjectModal 
+        isOpen={modalOpen} 
+        onClose={closeModal} 
+        project={selectedProject} 
+      />
     </section>
   );
 };
