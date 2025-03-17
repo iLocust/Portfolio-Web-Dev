@@ -121,18 +121,18 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         {/* Featured Work Header */}
         <div className="flex justify-between items-start mb-20">
-          <div>
+          <div className="reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
             <h2 className="text-5xl md:text-7xl font-bold text-white uppercase">
               FEATURED<br />WORK
             </h2>
           </div>
-          <div className="text-right max-w-md">
+          <div className="text-right max-w-md reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease', transitionDelay: '0.2s' }}>
             <p className="text-textLight mb-6 text-sm">
               As a front end developer using modern ideas simplicity design and universal visual identification tailored to dedicated and current market.
             </p>
             <a 
-              href="#contact" 
-              className="inline-flex items-center border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition duration-300 rounded-full"
+            href="#contact" 
+            className="inline-flex items-center border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition duration-300 rounded-full button-hover-effect"
             >
               Let's discuss <span className="ml-2">→</span>
             </a>
@@ -141,7 +141,7 @@ const Projects = () => {
         
         {/* Projects */}
         {categories.map((category, index) => (
-          <div key={category.id} className="border-t border-gray-800 ">
+          <div key={category.id} className="border-t border-gray-800 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.7s ease', transitionDelay: `${index * 0.15}s` }}>
             <div className="py-12 grid grid-cols-12 gap-8">
               {/* Left Column: Title */}
               <div className="col-span-5 md:col-span-4">
@@ -162,7 +162,7 @@ const Projects = () => {
                   <img 
                     src={category.image}
                     alt={category.title} 
-                    className="w-3/5 h-auto"
+                    className="w-3/5 h-auto hover-scale"
                   />
                 </div>
               </div>
@@ -171,7 +171,7 @@ const Projects = () => {
               <div className="col-span-2 flex justify-end items-start">
                 <button 
                   onClick={() => openModal(category)} 
-                  className="inline-flex items-center text-textLight hover:text-white transition-colors bg-transparent p-0"
+                  className="inline-flex items-center text-textLight hover:text-white transition-colors bg-transparent p-0 button-hover-effect"
                 >
                   View projects <span className="ml-2">→</span>
                 </button>
@@ -182,17 +182,17 @@ const Projects = () => {
         
         {/* Service Expertise Header */}
         <div className="flex justify-between items-start mt-32 mb-16 border-t border-gray-800 pt-16">
-          <div>
+          <div className="reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase">
                MY SERVICE<br />EXPERTISE
             </h2>
           </div>
-          <div className="text-right max-w-md">
+          <div className="text-right max-w-md reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease', transitionDelay: '0.2s' }}>
             <p className="text-textLight mb-6 text-sm">
             As a full-stack developer with a strong foundation in both technical development and functional consulting, I bring comprehensive solutions to every project.            </p>
             <a 
-              href="#contact" 
-              className="inline-flex items-center border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition duration-300 rounded-full"
+            href="#contact" 
+            className="inline-flex items-center border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition duration-300 rounded-full button-hover-effect"
             >
               Let's discuss <span className="ml-2">→</span>
             </a>
@@ -201,8 +201,8 @@ const Projects = () => {
         
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div key={service.id} className="border-t border-gray-800 pt-4">
+          {services.map((service, index) => (
+            <div key={service.id} className="border-t border-gray-800 pt-4 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.7s ease', transitionDelay: `${index * 0.15}s` }}>
               <div className="mb-6">
                 <span className="text-textLight">({service.id})</span>
               </div>

@@ -88,7 +88,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-darkBg">
       <div className="container mx-auto px-6">
-        <div className="mb-16">
+        <div className="mb-16 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase">
             MY<br />RUNNING PROJECT
           </h2>
@@ -96,8 +96,12 @@ const Experience = () => {
           Delivering modern front-end development with clean, simple designs and consistent visual elements that connect well with today's target market.          </p>
         </div>
         
-          {experiences.map((exp) => (
-            <div key={exp.id} className="border-t border-gray-800 py-6">
+          {experiences.map((exp, index) => (
+            <div 
+              key={exp.id} 
+              className="border-t border-gray-800 py-6 reveal-element opacity-0 translate-y-4" 
+              style={{ transition: 'all 0.6s ease', transitionDelay: `${index * 0.1}s` }}
+            >
               <div className="flex justify-between items-center">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -107,7 +111,7 @@ const Experience = () => {
                 </div>
                 <button 
                   onClick={() => openModal(exp)} 
-                  className="text-textLight flex items-center hover:text-white transition-colors bg-transparent p-0"
+                  className="text-textLight flex items-center hover:text-white transition-colors bg-transparent p-0 button-hover-effect"
                 >
                   Read More <span className="ml-2">→</span>
                 </button>

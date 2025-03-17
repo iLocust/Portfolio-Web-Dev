@@ -1,34 +1,85 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
-  if (!isOpen) return null;
+  const modalRef = useRef(null);
+  
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent body scrolling when modal is open
+      document.body.style.overflow = 'hidden';
+      
+      // Animation for modal entrance
+      const modalElement = modalRef.current;
+      setTimeout(() => {
+        if (modalElement) {
+          modalElement.style.opacity = '1';
+          modalElement.style.transform = 'scale(1)';
+        }
+      }, 10);
+    }
+    
+    // Cleanup when modal closes
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const handleBackdropClick = (e) => {
     // Only close if the backdrop was clicked, not the modal content
     if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+  
+  const handleClose = () => {
+    // Animate modal exit
+    const modalElement = modalRef.current;
+    if (modalElement) {
+      modalElement.style.opacity = '0';
+      modalElement.style.transform = 'scale(0.95)';
+      
+      // Delay actual closing to allow animation to complete
+      setTimeout(() => {
+        onClose();
+      }, 300);
+    } else {
       onClose();
     }
   };
 
+  if (!isOpen) return null;
+
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 px-4" 
+      className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 px-4 modal-backdrop" 
       onClick={handleBackdropClick}
+      style={{
+        transition: 'background-opacity 0.3s ease',
+      }}
     >
-      <div className="bg-darkBg border border-gray-800 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+      <div
+        ref={modalRef}
+        className="bg-darkBg border border-gray-800 w-full max-w-4xl max-h-[90vh] overflow-y-auto modal-content"
+        style={{
+          opacity: 0,
+          transform: 'scale(0.95)',
+          transition: 'opacity 0.3s ease, transform 0.3s ease'
+        }}
+      >
         {/* Header with large image */}
-        <div className="relative w-full h-72 md:h-96 overflow-hidden">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
-          />
+        <div className="relative w-full h-72 md:h-96 overflow-hidden img-zoom-container">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover modal-image-parallax img-zoom"
+              style={{ transition: 'transform 0.5s ease' }}
+            />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-6 md:p-8">
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">{project.title}</h2>
           </div>
           <button 
-            onClick={onClose}
+            onClick={handleClose}
             className="absolute top-6 right-6 text-white hover:text-primaryDark transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,7 +88,7 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
           </button>
         </div>
         
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 modal-stagger">
           {/* Project Info Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 border-b border-gray-800 pb-8">
             <div>
@@ -118,7 +169,8 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
                       href={project.website} 
                       target="_blank" 
                       rel="noreferrer"
-                      className="inline-flex items-center border border-white text-white px-4 py-2 hover:bg-white hover:text-black transition duration-300"
+                      className="inline-flex items-center border border-white text-white px-4 py-2 hover:bg-white hover:text-black transition duration-300 magnetic-effect"
+                      style={{ transition: 'transform 0.3s ease, background 0.3s ease, color 0.3s ease' }}
                     >
                       Visit Website <span className="ml-2">→</span>
                     </a>
@@ -127,8 +179,8 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
               </div>
               
               {/* Additional image placeholder */}
-              <div className="mt-6 bg-darkBg border border-gray-800 h-48 flex items-center justify-center">
-                <p className="text-textLight">Additional Image Placeholder</p>
+              <div className="mt-6 bg-darkBg border border-gray-800 h-48 flex items-center justify-center img-zoom-container">
+                <div className="text-textLight img-zoom" style={{ transition: 'transform 0.5s ease' }}>Additional Image Placeholder</div>
               </div>
             </div>
           </div>
@@ -140,8 +192,8 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[1, 2, 3].map((item) => (
-                <div key={item} className="bg-darkBg border border-gray-800 h-48 flex items-center justify-center">
-                  <p className="text-textLight">Gallery Image {item}</p>
+                <div key={item} className="bg-darkBg border border-gray-800 h-48 flex items-center justify-center tilt-effect img-zoom-container" style={{ transition: 'transform 0.3s ease' }}>
+                  <div className="text-textLight img-zoom" style={{ transition: 'transform 0.5s ease' }}>Gallery Image {item}</div>
                 </div>
               ))}
             </div>
