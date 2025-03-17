@@ -37,10 +37,11 @@ const Header = () => {
           </a>
         </div>
         
-        <nav className={`fixed md:static top-0 ${mobileMenuOpen ? 'right-0' : '-right-full'} md:right-0 h-screen md:h-auto w-3/4 md:w-auto bg-darkBg md:bg-transparent transition-all duration-300 md:transition-none z-50 md:z-auto p-8 md:p-0 shadow-2xl md:shadow-none`}>
+        <nav className={`fixed md:static top-0 ${mobileMenuOpen ? 'right-0' : '-right-full'} md:right-0 h-screen md:h-auto w-4/5 md:w-auto bg-darkBg md:bg-transparent transition-all duration-300 md:transition-none z-50 md:z-auto p-8 md:p-0 shadow-2xl md:shadow-none flex flex-col md:flex-row justify-center md:justify-end`}>
           <button 
-            className="absolute top-4 right-4 md:hidden text-2xl text-white" 
+            className="absolute top-4 right-4 md:hidden text-2xl text-white focus:outline-none" 
             onClick={toggleMobileMenu}
+            aria-label="Close menu"
           >
             ✕
           </button>
@@ -73,12 +74,13 @@ const Header = () => {
         </nav>
         
         <button 
-          className="flex flex-col space-y-1.5 md:hidden z-50"
-          onClick={toggleMobileMenu}
+        className="flex flex-col space-y-1.5 md:hidden z-50 focus:outline-none"
+        onClick={toggleMobileMenu}
+          aria-label="Menu"
         >
-          <span className="block w-6 h-0.5 bg-white transition-all"></span>
-          <span className="block w-6 h-0.5 bg-white transition-all"></span>
-          <span className="block w-6 h-0.5 bg-white transition-all"></span>
+        <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></span>
+        <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
     </header>

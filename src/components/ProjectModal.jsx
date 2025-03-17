@@ -51,7 +51,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4 modal-backdrop" 
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-3 sm:px-4 py-4 sm:py-6 modal-backdrop overflow-y-auto" 
       onClick={handleBackdropClick}
       style={{
         transition: 'background-opacity 0.3s ease',
@@ -66,17 +66,18 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           transition: 'opacity 0.3s ease, transform 0.3s ease'
         }}
       >
-        <div className="p-6 md:p-8 modal-stagger">
+        <div className="p-4 sm:p-6 md:p-8 modal-stagger">
           {/* Header */}
-          <div className="flex justify-between items-start mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white uppercase">
+          <div className="flex justify-between items-start mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white uppercase pr-8">
               {project.title}
             </h2>
             <button 
               onClick={handleClose}
-              className="text-white hover:text-primaryDark transition-colors"
+              className="text-white hover:text-primaryDark transition-colors focus:outline-none"
+              aria-label="Close modal"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -88,7 +89,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           </p>
           
           {/* Image Placeholder */}
-          <div className="bg-darkBg border border-gray-800 h-64 mb-6 flex items-center justify-center img-zoom-container overflow-hidden">
+          <div className="bg-darkBg border border-gray-800 h-40 sm:h-56 md:h-64 mb-4 sm:mb-6 flex items-center justify-center img-zoom-container overflow-hidden">
             <div className="text-textLight img-zoom" style={{ transition: 'transform 0.5s ease' }}>Project Image Placeholder</div>
           </div>
           
@@ -105,17 +106,19 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             <h3 className="text-xl font-bold text-white mb-4 mt-6 uppercase split-hover-text">
               TECHNOLOGIES USED
             </h3>
-            <ul className="text-textLight mb-4 list-disc pl-5">
+            <div className="flex flex-wrap gap-3 mb-4">
               {(project.technologies || ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"]).map((tech, index) => (
-                <li key={index} className="mb-1 hover-underline" style={{ transition: 'transform 0.3s ease', display: 'inline-block' }}>{tech}</li>
+                <span key={index} className="bg-darkBg border border-gray-800 px-3 py-1 text-sm text-textLight rounded-sm hover:border-gray-600 transition-colors">
+                  {tech}
+                </span>
               ))}
-            </ul>
+            </div>
             
             {/* Key Responsibilities */}
             <h3 className="text-xl font-bold text-white mb-4 mt-6 uppercase split-hover-text">
               KEY RESPONSIBILITIES
             </h3>
-            <ul className="text-textLight mb-4 list-disc pl-5">
+            <ul className="text-textLight mb-4 list-disc pl-5 space-y-2">
               {(project.responsibilities || [
                 "Designed and implemented responsive UI components",
                 "Developed RESTful API endpoints for data handling",
@@ -123,7 +126,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 "Conducted code reviews and implemented best practices",
                 "Collaborated with design team to ensure pixel-perfect implementation"
               ]).map((resp, index) => (
-                <li key={index} className="mb-1 hover-underline" style={{ transition: 'transform 0.3s ease', display: 'inline-block' }}>{resp}</li>
+                <li key={index} className="hover-underline">{resp}</li>
               ))}
             </ul>
             

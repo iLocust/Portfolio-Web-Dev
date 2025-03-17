@@ -69,25 +69,7 @@ const Experience = () => {
       achievements: 'Delivered a user-friendly e-learning platform that significantly improved the learning experience. The payment system with discount functionality increased course enrollments by 30%, while the structured syllabus navigation reduced support requests by 45%.'
     },
     {
-      id: 5,
-      title: 'SUPPLY CHAIN DEVELOPER',
-      company: 'Siloam International Hospital',
-      period: 'December 2024 - Present',
-      link: '#',
-      fullDescription: 'Currently developing a supply chain management application for Siloam International Hospital that integrates with Microsoft Dynamics 365 Finance and Operations (D365FO). The application manages the entire supply lifecycle from vendor delivery through location-specific inventory to patient consumption.',
-      technologies: ['Microsoft PowerApps', 'Dynamics 365 Finance & Operations', 'Power Automate', 'SharePoint', 'Azure Active Directory', 'SQL Server'],
-      responsibilities: [
-        'Developing and implementing a comprehensive supply chain management solution',
-        'Integrating vendor portal systems with D365FO for streamlined inventory intake',
-        'Creating location-specific inventory management across multiple hospital facilities',
-        'Implementing user and role management systems with appropriate access controls',
-        'Developing patient medication consumption tracking with automatic inventory adjustments',
-        'Building automated warehouse stock verification and reconciliation processes'
-      ],
-      achievements: 'Successfully implemented an end-to-end supply chain solution that has reduced manual data entry by 70%, improved inventory accuracy by 40%, and decreased stock discrepancies by 55%. The system provides real-time visibility across all hospital locations.'
-    },
-    {
-      id: 4,
+      id: 3,
       title: 'INTERSHIP FULL-STACK DEVELOPER',
       company: 'Central Bureau of Statistics',
       period: 'August 2021 - December 2021',
@@ -108,8 +90,8 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-darkBg">
       <div className="container mx-auto px-6">
-        <div className="mb-16 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase">
+        <div className="mb-12 sm:mb-16 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">
             MY<br />RUNNING PROJECT
           </h2>
           <p className="text-textLight text-sm mb-2 uppercase tracking-widest max-w-xl">
@@ -122,16 +104,16 @@ const Experience = () => {
               className="border-t border-gray-800 py-6 reveal-element opacity-0 translate-y-4" 
               style={{ transition: 'all 0.6s ease', transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
                     {exp.title}
                   </h3>
                   <p className="text-textLight mt-1">{exp.company} | {exp.period}</p>
                 </div>
                 <button 
                   onClick={() => openModal(exp)} 
-                  className="text-textLight flex items-center hover:text-white transition-colors bg-transparent p-0 button-hover-effect"
+                  className="text-textLight flex items-center hover:text-white transition-colors bg-transparent p-0 button-hover-effect self-start sm:self-center"
                 >
                   Read More <span className="ml-2">→</span>
                 </button>
