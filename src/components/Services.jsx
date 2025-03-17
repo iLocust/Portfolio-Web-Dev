@@ -13,13 +13,15 @@ const Services = () => {
       { threshold: 0.1 }
     );
     
-    if (servicesRef.current) {
-      observer.observe(servicesRef.current);
+    const currentRef = servicesRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
     }
     
     return () => {
-      if (servicesRef.current) {
-        observer.unobserve(servicesRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

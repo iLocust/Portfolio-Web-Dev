@@ -30,7 +30,7 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
           <a 
-            href="#" 
+            href="/" 
             className="text-2xl font-bold text-white"
           >
             Alexandra<span>.</span>

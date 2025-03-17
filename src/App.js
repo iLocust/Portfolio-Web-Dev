@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 // These components are no longer used in the minimalist design
 // import Awards from './components/Awards';
-import Services from './components/Services';
+// import Services from './components/Services';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import { initAnimations } from './utils/animations';

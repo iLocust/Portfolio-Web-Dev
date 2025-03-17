@@ -21,16 +21,17 @@ const Experience = () => {
       company: 'Menara Tirza Christian School',
       period: 'Aug 2024 - Present',
       link: '#',
-      fullDescription: 'Led the development of a comprehensive school management system for Menara Tirza Christian School, handling everything from database design to frontend implementation. The system includes student management, attendance tracking, grade reporting, and communication tools.',
-      technologies: ['React.js', 'Node.js', 'Express', 'MySQL', 'Tailwind CSS', 'Redux'],
+      fullDescription: 'Developed a web-based application for Menara Tirza Christian School cooperative store, designed for use on tablet devices. Built with React.js and utilizing IndexedDB for local data storage, the application provides offline functionality for seamless operation.',
+      technologies: ['React.js', 'IndexedDB', 'Tailwind CSS', 'Barcode Scanner API', 'Print API', 'Recharts'],
       responsibilities: [
-        'Designed and implemented the entire system architecture',
-        'Developed user-friendly interfaces for administrators, teachers, and parents',
-        'Created a responsive design that works across all devices',
-        'Implemented secure authentication and authorization systems',
-        'Built reporting tools for academic performance tracking'
+        'Designed and developed the complete cooperative store application system',
+        'Implemented financial dashboards with data visualization',
+        'Built product catalog system with barcode scanner integration',
+        'Developed sales system with receipt printing capability',
+        'Created cash management and financial reporting systems',
+        'Optimized application performance for tablet devices'
       ],
-      achievements: 'Delivered a fully functional system that reduced administrative workload by 60%. Implemented features that improved parent-teacher communication and student performance tracking.'
+      achievements: 'Successfully automated the school cooperative store processes that were previously manual, saving over 50% in operational time and improving record-keeping accuracy. The application functions offline, eliminating dependence on internet connectivity.'
     },
     {
       id: 2,
@@ -55,16 +56,35 @@ const Experience = () => {
       company: 'Metrodata Academy (Metrodata Group)',
       period: 'August 2024 - December 2024',
       link: '#',
-      fullDescription: 'Participated in an intensive development program at Metrodata Academy, focusing on front-end technologies and best practices. Worked on real-world projects while learning advanced techniques in web development.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Redux', 'Styled Components', 'Jest'],
+      fullDescription: 'Participated in the development of a comprehensive e-learning platform for Metrodata Academy. The platform enables users to make payments with discount codes, view course schedules, and access syllabus pages in a structured and intuitive manner.',
+      technologies: ['React.js', 'Next.js', 'Node.js', 'MongoDB', 'Stripe API', 'Material UI'],
       responsibilities: [
-        'Built responsive and interactive user interfaces',
-        'Implemented state management solutions using Redux',
-        'Created reusable component libraries',
-        'Performed unit and integration testing',
-        'Collaborated with designers to ensure pixel-perfect implementations'
+        'Developed responsive and interactive user interfaces',
+        'Implemented payment system with discount code functionality',
+        'Created interactive course calendar and scheduling features',
+        'Built structured syllabus navigation for improved content access',
+        'Ensured cross-device compatibility and responsive design',
+        'Collaborated with backend team for seamless API integration'
       ],
-      achievements: 'Created a comprehensive e-learning platform that was adopted as a key training tool within the organization. Received recognition for exceptional UI/UX implementation and attention to detail.'
+      achievements: 'Delivered a user-friendly e-learning platform that significantly improved the learning experience. The payment system with discount functionality increased course enrollments by 30%, while the structured syllabus navigation reduced support requests by 45%.'
+    },
+    {
+      id: 5,
+      title: 'SUPPLY CHAIN DEVELOPER',
+      company: 'Siloam International Hospital',
+      period: 'December 2024 - Present',
+      link: '#',
+      fullDescription: 'Currently developing a supply chain management application for Siloam International Hospital that integrates with Microsoft Dynamics 365 Finance and Operations (D365FO). The application manages the entire supply lifecycle from vendor delivery through location-specific inventory to patient consumption.',
+      technologies: ['Microsoft PowerApps', 'Dynamics 365 Finance & Operations', 'Power Automate', 'SharePoint', 'Azure Active Directory', 'SQL Server'],
+      responsibilities: [
+        'Developing and implementing a comprehensive supply chain management solution',
+        'Integrating vendor portal systems with D365FO for streamlined inventory intake',
+        'Creating location-specific inventory management across multiple hospital facilities',
+        'Implementing user and role management systems with appropriate access controls',
+        'Developing patient medication consumption tracking with automatic inventory adjustments',
+        'Building automated warehouse stock verification and reconciliation processes'
+      ],
+      achievements: 'Successfully implemented an end-to-end supply chain solution that has reduced manual data entry by 70%, improved inventory accuracy by 40%, and decreased stock discrepancies by 55%. The system provides real-time visibility across all hospital locations.'
     },
     {
       id: 4,
