@@ -3,8 +3,18 @@ import React from 'react';
 const ProjectModal = ({ isOpen, onClose, project }) => {
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e) => {
+    // Only close if the backdrop was clicked, not the modal content
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4" 
+      onClick={handleBackdropClick}
+    >
       <div className="bg-surface w-full max-w-3xl max-h-[90vh] overflow-y-auto">
         <div className="p-6 md:p-8">
           {/* Header */}
