@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
+import { Timeline } from './ui/timeline';
+import { motion } from 'framer-motion';
 
 const Experience = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -69,8 +71,8 @@ const Experience = () => {
       achievements: 'Delivered a user-friendly e-learning platform that significantly improved the learning experience. The payment system with discount functionality increased course enrollments by 30%, while the structured syllabus navigation reduced support requests by 45%.'
     },
     {
-      id: 3,
-      title: 'INTERSHIP FULL-STACK DEVELOPER',
+      id: 4,
+      title: 'INTERNSHIP FULL-STACK DEVELOPER',
       company: 'Central Bureau of Statistics',
       period: 'August 2021 - December 2021',
       link: '#',
@@ -86,43 +88,34 @@ const Experience = () => {
       achievements: 'Developed a key data visualization module that was incorporated into the main statistical reporting system. Received commendation for technical abilities and problem-solving skills.'
     }
   ];
+
+  // Format data for Timeline component
+  const timelineData = experiences.map(exp => ({
+    title: exp.period,
+    content: (
+      <div>
+        <h3 className="text-lg sm:text-xl font-bold text-white">
+          {exp.title}
+        </h3>
+        <p className="text-textLight mt-1 mb-2">{exp.company}</p>
+        <p className="text-textLight text-sm mb-3">
+          {exp.fullDescription ? exp.fullDescription.substring(0, 120) + '...' : ''}
+        </p>
+        <motion.button
+          whileHover={{ x: 5 }}
+          transition={{ duration: 0.2 }}
+          onClick={() => openModal(exp)}
+          className="text-white flex items-center hover:text-white transition-colors bg-transparent p-0 button-hover-effect"
+        >
+          Read More <span className="ml-2">→</span>
+        </motion.button>
+      </div>
+    )
+  }));
   
   return (
-    <section id="experience" className="py-20 bg-darkBg">
-      <div className="container mx-auto px-6">
-        <div className="mb-12 sm:mb-16 reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">
-            MY<br />RUNNING PROJECT
-          </h2>
-          <p className="text-textLight text-sm mb-2 uppercase tracking-widest max-w-xl">
-          Delivering modern front-end development with clean, simple designs and consistent visual elements that connect well with today's target market.          </p>
-        </div>
-        
-          {experiences.map((exp, index) => (
-            <div 
-              key={exp.id} 
-              className="border-t border-gray-800 py-6 reveal-element opacity-0 translate-y-4" 
-              style={{ transition: 'all 0.6s ease', transitionDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
-                <div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                    {exp.title}
-                  </h3>
-                  <p className="text-textLight mt-1">{exp.company} | {exp.period}</p>
-                </div>
-                <button 
-                  onClick={() => openModal(exp)} 
-                  className="text-textLight flex items-center hover:text-white transition-colors bg-transparent p-0 button-hover-effect self-start sm:self-center"
-                >
-                  Read More <span className="ml-2">→</span>
-                </button>
-              </div>
-              <p className="text-textLight mt-4">{exp.description}</p>
-            </div>
-          ))}
-        
-      </div>
+    <section id="experience" className="py-0 bg-darkBg">
+      <Timeline data={timelineData} />
       
       {/* Project Modal */}
       <ProjectModal 

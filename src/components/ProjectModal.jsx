@@ -87,12 +87,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           <p className="text-textLight text-sm mb-6">
             {project.company} | {project.period}
           </p>
-          
-          {/* Image Placeholder */}
-          <div className="bg-darkBg border border-gray-800 h-40 sm:h-56 md:h-64 mb-4 sm:mb-6 flex items-center justify-center img-zoom-container overflow-hidden">
-            <div className="text-textLight img-zoom" style={{ transition: 'transform 0.5s ease' }}>Project Image Placeholder</div>
-          </div>
-          
+     
           {/* Description */}
           <div className="border-t border-gray-800 pt-6">
             <h3 className="text-xl font-bold text-white mb-4 uppercase split-hover-text">

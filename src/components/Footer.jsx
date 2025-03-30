@@ -20,13 +20,7 @@ const Footer = () => {
                 If you need assistance with your project or have an opportunity to collaborate, feel free to reach out to me, and let's discuss how I can help.
               </p>
               
-              <div>
-                <input 
-                  type="email" 
-                  placeholder="Enter e-mail" 
-                  className="w-full max-w-sm bg-transparent border-b border-gray-700 py-2 text-white placeholder:text-gray-600 focus:outline-none focus:border-white"
-                />
-              </div>
+          
               
               <div className="mt-12">
                 <div className="flex flex-col space-y-4">
@@ -73,14 +67,7 @@ const Footer = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
-                <h4 className="text-white font-medium mb-4 uppercase">Skills</h4>
-                <ul className="space-y-3">
-                  <li><span className="text-textLight">JavaScript / TypeScript</span></li>
-                  <li><span className="text-textLight">React.js / Next.js</span></li>
-                  <li><span className="text-textLight">Node.js / Spring Boot</span></li>
-                  <li><span className="text-textLight">MySQL / SQLite</span></li>
-                  <li><span className="text-textLight">UI/UX Design (Figma)</span></li>
-                </ul>
+               
               </div>
               
               <div>

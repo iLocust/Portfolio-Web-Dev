@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 // import Awards from './components/Awards';
 // import Services from './components/Services';
 import Projects from './components/Projects';
+import SkillsMarquee from './components/SkillsMarquee';
 import Footer from './components/Footer';
 import { initAnimations } from './utils/animations';
 import { initModalEffects } from './utils/modalEffects';
@@ -38,6 +39,7 @@ function App() {
         {/* <Awards /> */}
         {/* <Services /> */}
         <Experience />
+        <SkillsMarquee />
         <Projects />
       </main>
       <Footer />

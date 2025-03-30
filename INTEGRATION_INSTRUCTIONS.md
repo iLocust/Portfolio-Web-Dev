@@ -1,6 +1,6 @@
 # Integration Instructions
 
-To successfully integrate the background paths component into the portfolio, please follow these steps:
+To successfully integrate the UI components into the portfolio, please follow these steps:
 
 ## Required Dependencies
 
@@ -17,21 +17,30 @@ The project now uses path aliases via a `jsconfig.json` file. This allows import
 ## Component Structure
 
 1. The UI components are now located in the `/src/components/ui` directory
-2. The background paths components are implemented in:
-   - `/src/components/ui/background-paths.jsx`
-   - `/src/components/ui/button.jsx`
+2. The components implemented are:
+   - `/src/components/ui/background-paths.jsx` - Used in Hero section
+   - `/src/components/ui/button.jsx` - Used by background-paths
+   - `/src/components/ui/timeline.jsx` - Used in Experience section
 
 ## Implemented Changes
 
 1. Added animated floating paths as a background to the Hero section
-2. Enhanced the Hero component with motion animations for text and image
+   - Enhanced the Hero component with motion animations for text and image
+   - Added gradient fade at the bottom for smooth transition
+
+2. Implemented Timeline component in the Experience section
+   - Converted experience list to an animated timeline view
+   - Added scroll-based animation for the timeline progress line
+   - Enhanced with motion animations for each timeline entry
+
 3. Added support for path aliases with jsconfig.json
 
 ## Notes
 
-- The background paths will appear as a subtle animated pattern behind the content
-- The opacity is set to 25% to ensure it doesn't distract from the main content
-- The animation effects are provided by framer-motion
+- The background paths in Hero section have 25% opacity to ensure they don't distract from main content
+- The Timeline component shows experiences in chronological order with animated scroll effects
+- Both components use framer-motion for animations
+- The "Read More" buttons in the timeline entries trigger the same modal as before
 
 ## Potential Issues
 
