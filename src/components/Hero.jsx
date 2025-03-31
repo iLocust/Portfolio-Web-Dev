@@ -66,7 +66,7 @@ const Hero = () => {
               className="mt-8 sm:mt-12 mb-6 sm:mb-8 border-t border-gray-800 pt-4 sm:pt-6"
             >
               <p className="text-textLight text-sm sm:text-base px-4 md:px-0">
-                React.js Front-End Developer | Combining Technical Development with UI/UX Design & Solution Architecture
+                React.js Front-End Developer | Combining Technical Development with UI/UX Design & Functional Consulting
               </p>
             </motion.div>
             

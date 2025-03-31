@@ -119,10 +119,10 @@ const Projects = () => {
   return (
     <section id="work" className="py-20 bg-black border-t border-gray-800">
       <div className="container mx-auto px-6">
-        {/* Featured Projects Header */}
+        {/* Featured Work Header */}
         <div className="flex flex-col sm:flex-row justify-between items-baseline mb-16">
           <div className="reveal-element opacity-0 translate-y-4" style={{ transition: 'all 0.8s ease' }}>
-            <h2 className="pb-10 text-5xl sm:text-6xl md:text-7xl font-bold text-white">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white">
               Featured Projects
             </h2>
           </div>
@@ -138,12 +138,12 @@ const Projects = () => {
           {categories.map((category, index) => (
             <div key={category.id} className="group reveal-element opacity-0 translate-y-4" 
                  style={{ transition: 'all 0.7s ease', transitionDelay: `${index * 0.15}s` }}>
-              <div className="py-8 grid md:grid-cols-2 gap-16 items-center">
-                <div className="relative">
-                  <span className="text-[180px] font-bold text-gray-700/40 absolute -top-44 -left-4 -z-10">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                  <span className="text-9xl font-bold text-gray-800 block mb-4">
                     {category.count.padStart(2, "0")}
                   </span>
-                  <h3 className="text-4xl sm:text-5xl font-medium mb-6 text-white relative z-10">
+                  <h3 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
                     {category.title}
                   </h3>
                   <p className="text-xl text-gray-300 mb-8 max-w-xl">
@@ -155,13 +155,14 @@ const Projects = () => {
                         {tech}
                       </span>
                     ))}
+        </div>}
                   </div>
                   <div>
                     <button 
                       onClick={() => openModal(category)}
-                      className="inline-block border-[3px] border-white text-white px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300"
+                      className="inline-block border border-gray-700 text-white px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300"
                     >
-                      View Project <span className="ml-2">→</span>
+                      View Project
                     </button>
                   </div>
                 </div>
@@ -176,8 +177,7 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          ))
         
         {/* Service Expertise Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start gap-8 sm:gap-0 mt-20 sm:mt-32 mb-12 sm:mb-16 border-t border-gray-800 pt-12 sm:pt-16">
