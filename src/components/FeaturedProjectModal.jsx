@@ -180,14 +180,14 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
               </div>
               
               {/* Additional image placeholder */}
-              <div className="mt-6 bg-darkBg border border-gray-800 h-48 flex items-center justify-center img-zoom-container">
+              {/* <div className="mt-6 bg-darkBg border border-gray-800 h-48 flex items-center justify-center img-zoom-container">
                 <div className="text-textLight img-zoom" style={{ transition: 'transform 0.5s ease' }}>Additional Image Placeholder</div>
-              </div>
+              </div> */}
             </div>
           </div>
           
           {/* Gallery Section */}
-          <div className="mt-8 sm:mt-12 border-t border-gray-800 pt-6 sm:pt-8">
+          {/* <div className="mt-8 sm:mt-12 border-t border-gray-800 pt-6 sm:pt-8">
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 uppercase">
               PROJECT GALLERY
             </h3>
@@ -198,7 +198,7 @@ const FeaturedProjectModal = ({ isOpen, onClose, project }) => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

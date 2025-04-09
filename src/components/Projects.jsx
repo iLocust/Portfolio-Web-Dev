@@ -39,7 +39,7 @@ const Projects = () => {
         'Cooperative store cash management for expense and income tracking',
         'Daily and monthly sales reporting'
       ],
-      website: '#'
+      website: 'https://koperasi-menara-tirza.pages.dev/'
     },
     { 
       id: 'web-development', 
@@ -62,7 +62,7 @@ const Projects = () => {
         'Responsive design for all device types',
         'Integration with administrative backend systems'
       ],
-      website: '#'
+      website: 'https://metrodataacademy.id/'
     },
     { 
       id: 'siloam', 

@@ -2,6 +2,7 @@ import React from 'react';
 import profileImage from '../assets/images/dim-1.png';
 import { motion } from 'framer-motion';
 import { FloatingPaths } from './ui/background-paths';
+import AnimatedWordCycle from './ui/animated-text-cycle';
 
 const Hero = () => {
   return (
@@ -38,15 +39,14 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="inline-block"
               >
-                FRONT 
-              </motion.span>{" "}
-              <motion.span
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="italic font-normal inline-block"
-              >
-                end
+                <AnimatedWordCycle
+                  words={[
+                    "FRONT-END",
+                    "FULL-STACK"
+                  ]}
+                  interval={3000}
+                  className={"uppercase"}
+                />
               </motion.span>
               <br className="hidden xs:block" />
               <motion.span
